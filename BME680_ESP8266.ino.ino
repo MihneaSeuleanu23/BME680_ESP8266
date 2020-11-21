@@ -86,14 +86,6 @@ void Weather_Connection()
     return;
   }
 
-
-  
-  // There's no need to delay() until millis() >= endTime: bme.endReading()
-  // takes care of that. It's okay for parallel work to take longer than
-  // BME680's measurement time.
-
-  // Obtain measurement results from BME680. Note that this operation isn't
-  // instantaneous even if milli() >= endTime due to I2C/SPI latency.
   if (!bme.endReading()) {
     Serial.println(F("Failed to complete reading :("));
     return;
